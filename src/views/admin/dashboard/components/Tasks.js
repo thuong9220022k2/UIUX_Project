@@ -47,7 +47,7 @@ export default function Conversion(props) {
             color={textColor}
             fontSize='md'
             textAlign='start'>
-            Landing Page Design
+            Bài Tập UI/UX
           </Text>
           <Icon
             ms='auto'
@@ -64,7 +64,7 @@ export default function Conversion(props) {
             color={textColor}
             fontSize='md'
             textAlign='start'>
-            Dashboard Builder
+            Dự Án Công Ty
           </Text>
           <Icon
             ms='auto'
@@ -81,7 +81,7 @@ export default function Conversion(props) {
             color={textColor}
             fontSize='md'
             textAlign='start'>
-            Mobile App Design
+             Dự Án Mobile App 
           </Text>
           <Icon
             ms='auto'
@@ -98,7 +98,7 @@ export default function Conversion(props) {
             color={textColor}
             fontSize='md'
             textAlign='start'>
-            Illustrations
+            Memory Solution
           </Text>
           <Icon
             ms='auto'
@@ -115,7 +115,7 @@ export default function Conversion(props) {
             color={textColor}
             fontSize='md'
             textAlign='start'>
-            Promotional LP
+            Thiết Kế Độc Quyền
           </Text>
           <Icon
             ms='auto'

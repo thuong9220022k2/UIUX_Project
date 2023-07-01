@@ -2,42 +2,58 @@ import React, { useEffect, useState } from "react";
 import { Box, Button, Flex, Text, useDisclosure } from "@chakra-ui/react";
 import { useDispatch, useSelector } from "react-redux";
 import { getCheckPoint, getTagsList } from "../../../../Redux/AppContext/actions";
-import { useHistory } from "react-router-dom";
+import { useHistory,useLocation } from "react-router-dom";
 import { LpCreateTask } from "./LpCreateTask";
 
 const LpSidebar = () => {
   const dispatch = useDispatch();
   const tagLists = useSelector((store) => store.AppReducer.tags);
   const tasks = useSelector((store) => store.AppReducer.tasks);
-        const [selectTags, setSelectTags] = useState([]);
-        const history = useHistory();
-        useEffect(() => {
-          const params = new URLSearchParams(window.location.search);
-          const tags = params.getAll('tags');
-          setSelectTags(tags || []);
-        }, []);
-      
-        const handleTagChange = (value) => {
-          let newTags = [...selectTags];
-          if (selectTags.includes(value)) {
-            newTags = newTags.filter((tag) => tag !== value);
-          } else {
-            newTags.push(value);
-          }
-          setSelectTags(newTags);
-      
-          const params = new URLSearchParams(window.location.search);
-          params.delete('tags');
-          newTags.forEach((tag) => params.append('tags', tag));
-      
-          const newUrl = `${window.location.pathname}?${params.toString()}`;
-          window.location.href = newUrl;
-          history.push(newUrl);
-        };
-        
-        
+  // const [searchParams, setSearchParams] = useSearchParams();
+  // const [selectTags, setSelectTags] = useState(
+  //   searchParams.getAll("tags") || []
+  // );
+  // const { isOpen, onOpen, onClose } = useDisclosure();
+  // const checkPoints = useSelector((store) => store.AppReducer.checkPoint);
+
+  // const handleTagChange = (value) => {
+  //   let newTags = [...selectTags];
+  //   if (selectTags.includes(value)) {
+  //     newTags.splice(newTags.indexOf(value), 1);
+  //   } else {
+  //     newTags.push(value);
+  //   }
+  //   setSelectTags(newTags);
+  //   setSearchParams({ tags: newTags });
+  // };
+  const location = useLocation();
+  const [selectTags, setSelectTags] = useState([]);
   const { isOpen, onOpen, onClose } = useDisclosure();
   const checkPoints = useSelector((store) => store.AppReducer.checkPoint);
+  const history = useHistory();
+
+  useEffect(() => {
+    const params = new URLSearchParams(location.search);
+    const tags = params.getAll('tags');
+    setSelectTags(tags || []);
+  }, [location.search]);
+
+  const handleTagChange = (value) => {
+    let newTags = [...selectTags];
+    if (selectTags.includes(value)) {
+      newTags = newTags.filter((tag) => tag !== value);
+    } else {
+      newTags.push(value);
+    }
+    setSelectTags(newTags);
+
+    const params = new URLSearchParams(location.search);
+    params.delete('tags');
+    newTags.forEach((tag) => params.append('tags', tag));
+
+    const newUrl = `${location.pathname}?${params.toString()}`;
+    history.push(newUrl);
+  }; 
 
   useEffect(() => {
     if (checkPoints.length === 0) {

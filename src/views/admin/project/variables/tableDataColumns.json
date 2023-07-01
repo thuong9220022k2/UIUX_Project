@@ -1,26 +1,26 @@
 [
     {
-      "name":"Marketplace",
-      "quantity": 2458, 
-      "date": "12.Jan.2021",
+      "name":"Thiết kế giao diện",
+      "project": "UI/UX", 
+      "date": "12.Jan",
       "progress": 75.5  
     },
     {
-      "name":"Venus DB PRO",
-      "quantity": 1485, 
-      "date": "21.Feb.2021",
+      "name":"Lập trình nhúng",
+      "project": "OPEN ERP", 
+      "date": "21.Feb",
       "progress": 35.4  
     },
     {
-      "name":"Venus DS",
-      "quantity": 1024, 
-      "date": "13.Mar.2021",
+      "name":"Thiết kế mĩ thuật",
+      "project": "Vẽ thêm", 
+      "date": "13.Mar",
       "progress": 25  
     },
     {
-      "name":"Venus 3D Asset",
-      "quantity": 858, 
-      "date": "24.Jan.2021",
+      "name":"Xử lí logic",
+      "project": "TTUD", 
+      "date": "24.Jan",
       "progress": 100  
     }
   ]

@@ -27,8 +27,8 @@ export const columnsDataCheck = [
     accessor: "progress",
   },
   {
-    Header: "QUANTITY",
-    accessor: "quantity",
+    Header: "PROJECT",
+    accessor: "project",
   },
   {
     Header: "DATE",
@@ -46,8 +46,8 @@ export const columnsDataColumns = [
     accessor: "progress",
   },
   {
-    Header: "QUANTITY",
-    accessor: "quantity",
+    Header: "PROJECT",
+    accessor: "project",
   },
   {
     Header: "DATE",
