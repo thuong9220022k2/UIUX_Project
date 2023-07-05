@@ -1,26 +1,26 @@
 [
   {
-    "name":"UI/UX",
-    "status": "Approved",
-    "date": "18 Apr",
+    "name":"Dự án AI",
+    "priority": "High",
+    "date": "24.Jan",
     "progress": 75.5  
   },
   {
     "name":"ITSS",
-    "status": "Disable",
-    "date": "18 Apr",
+    "priority": "Low",
+    "date": "30.Dec",
     "progress": 25.5  
   },
   {
-    "name":"TTUD",
-    "status": "Error",
-    "date": "20 May",
+    "name":"UI/UX",
+    "priority": "High",
+    "date": "20.May.2021",
     "progress": 90  
   },
   {
-    "name":"Dự Án AI",
-    "status": "Approved",
-    "date": "12 Jul",
+    "name":"Open Erp",
+    "priority": "Medium",
+    "date": "12.Jul",
     "progress": 50.5  
   }
 ]

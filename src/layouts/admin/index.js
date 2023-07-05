@@ -127,7 +127,7 @@ export default function Dashboard(props) {
 							<Box>
 								<Navbar
 									onOpen={onOpen}
-									logoText={'Manage Task'}
+									logoText={'Manage Task'}       
 									brandText={getActiveRoute(routes)}
 									secondary={getActiveNavbar(routes)}
 									message={getActiveNavbarText(routes)}

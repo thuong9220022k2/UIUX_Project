@@ -1,12 +1,12 @@
 import React from "react";
 
 // Chakra imports
-import { Flex, useColorModeValue } from "@chakra-ui/react";
+import { Flex, useColorModeValue, Text,Box } from "@chakra-ui/react";
 
 // Custom components
 // import { HorizonLogo } from "components/icons/Icons";
 // import { HSeparator } from "components/separator/Separator";
-import {HorizonLogo} from "../../icons/Icons"
+import {HorizonLogo, SlackLogo} from "../../icons/Icons"
 import {HSeparator} from "../../separator/Separator"
 
 export function SidebarBrand() {
@@ -15,7 +15,11 @@ export function SidebarBrand() {
 
   return (
     <Flex align='center' direction='column'>
-      <HorizonLogo h='26px' w='175px' my='32px' color={logoColor} />
+      {/* <SlackLogo h='26px' w='175px' my='32px' color={logoColor} /> */}
+      {/* <Text fontSize='3xl'>Manage Task</Text> */}
+      <Box h='26px' w='175px' my='32px' color={logoColor}>
+         <Text fontSize='28px' fontWeight='500'>Manage Task</Text>
+      </Box>
       <HSeparator mb='20px' />
     </Flex>
   );
