@@ -1,81 +1,45 @@
 [
-    {
-      "name":["Marketplace",false],
-      "quantity": 2458, 
-      "date": "12.Jan.2021",
-      "progress": 75.5  
-    },
-    {
-      "name":["Venus DB PRO",true],
-      "quantity": 1485, 
-      "date": "21.Feb.2021",
-      "progress": 35.4  
-    },
-    {
-      "name":["Venus DS",true],
-      "quantity": 1024, 
-      "date": "13.Mar.2021",
-      "progress": 25  
-    },
-    {
-      "name":["Venus 3D Asset",true],
-      "quantity": 858, 
-      "date": "24.Jan.2021",
-      "progress": 100  
-    },
-    {
-      "name":["Marketplace",false],
-      "quantity": 258, 
-      "date": "Oct 24, 2022",
-      "progress": 75.5  
-    },
-    {
-      "name":["Marketplace",false],
-      "quantity": 258, 
-      "date": "Oct 24, 2022",
-      "progress": 75.5  
-    },
-    {
-      "name":["Marketplace",false],
-      "quantity": 258, 
-      "date": "12.Jan.2021",
-      "progress": 75.5  
-    },
-    {
-      "name":["Venus DB PRO",false],
-      "quantity": 858, 
-      "date": "21.Feb.2021",
-      "progress": 35.4  
-    },
-    {
-      "name":["Venus DS",false],
-      "quantity": 1024, 
-      "date": "13.Mar.2021",
-      "progress": 25  
-    },
-    {
-      "name":["Venus 3D Asset",false],
-      "quantity": 258, 
-      "date": "24.Jan.2021",
-      "progress": 100  
-    },
-    {
-      "name":["Marketplace",false],
-      "quantity": 1024, 
-      "date": "Oct 24, 2022",
-      "progress": 75.5  
-    },
-    {
-      "name":["Marketplace",false],
-      "quantity": 258, 
-      "date": "Oct 24, 2022",
-      "progress": 75.5  
-    },
-    {
-      "name":["Marketplace",false],
-      "quantity": 258, 
-      "date": "Oct 24, 2022",
-      "progress": 75.5  
-    }
-  ]
+  {
+    "name":["Xử Lí Thuật Toán",false],
+    "project": "Dự án AI", 
+    "date": "12 Jan",
+    "progress": 17.5  
+  },
+  {
+    "name":["Đệ Quy Quay Lui",true],
+    "project": "TTUD", 
+    "date": "21 June",
+    "progress": 10.8  
+  },
+  {
+    "name":["Dự án UI/UX",true],
+    "project": "UI/UX", 
+    "date": "13 Mar",
+    "progress": 21.3  
+  },
+  {
+    "name":["Thiết kế class",true],
+    "project": "ITSS", 
+    "date": "24 Jan ",
+    "progress": 31.5  
+  },
+  {
+    "name":["Demo giao diện",false],
+    "project": "Lập trình app", 
+    "date": "24 Oct",
+    "progress": 12.2  
+  },
+  {
+    "name":["Thiết kế diagram",true],
+    "project": "ITSS", 
+    "date": "24 Jan ",
+    "progress": 31.5  
+  },
+  {
+    "name":["Demo Giari Thuật",false],
+    "project": "Lập trình app", 
+    "date": "24 Oct",
+    "progress": 12.2  
+  }
+]
   

@@ -402,11 +402,11 @@ const CalendarHomePage = () => {
                   <AlertDialogOverlay>
                     <AlertDialogContent>
                       <AlertDialogHeader fontSize="lg" fontWeight="bold">
-                        Delete Event
+                        Delete Task
                       </AlertDialogHeader>
 
                       <AlertDialogBody>
-                        Are you sure? You can't undo this action afterwards.
+                        Bạn có chắc muốn xóa task
                       </AlertDialogBody>
 
                       <AlertDialogFooter>

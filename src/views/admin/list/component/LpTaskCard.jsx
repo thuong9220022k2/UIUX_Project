@@ -4,21 +4,33 @@ import {
     Flex,
     Text,
     Stack,
-    CheckboxGroup,
-    Checkbox,
+    Button,
+    Modal,
+    ModalBody,
+    ModalCloseButton,
+    ModalContent,
+    ModalHeader,
+    ModalOverlay,
+    ModalFooter,
+    Select,
     useToast,
+    FormControl,
+    FormLabel,
+    Input,
+    useDisclosure
 } from "@chakra-ui/react";
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import { deleteTasks, getTasks, updateSubtasksList } from "../../../../Redux/AppContext/actions";
+import { deleteTasks, getTasks,updateTasks } from "../../../../Redux/AppContext/actions";
 import { EditIcon, DeleteIcon } from "@chakra-ui/icons";
 import { Link } from "react-router-dom";
 
-
-const LpTaskCard = ({ id, title, description, tags, Date, colorScheme }) => {
+const LpTaskCard = ({ id, title, description,task_status, tags, Date, colorScheme }) => {
 
     const dispatch = useDispatch();
     const toast = useToast();
+
+    const { isOpen, onOpen, onClose } = useDisclosure();
 
     const deleteTaskHandler = (id) => {
         dispatch(deleteTasks(id))
@@ -33,31 +45,24 @@ const LpTaskCard = ({ id, title, description, tags, Date, colorScheme }) => {
             .then(() => dispatch(getTasks()));
     };
 
-    // const [checkBox, setCheckBox] = useState(() => {
-    //     let data = subTasks.filter((item) => {
-    //         return item.status && item.subTaskTitle;
-    //     })
-    //         .map((item) => item.subTaskTitle);
-    //     return data;
-    // });
+    const [taskTitle, setTaskTitle] = useState(title);
+    const [taskDescription, setTaskDescription] = useState(description);
+    const [taskStatus, setTaskStatus] = useState(task_status);
+    const [taskTags, setTaskTags] = useState(tags);
+    const [taskDate,setTaskDate] = useState(Date)
 
+    const updateFunc = ()=>{
+        dispatch(
+            updateTasks(id, {
+              title: taskTitle,
+              description: taskDescription,
+              Date: taskDate,
+              tags :taskTags,
+              task_status: taskStatus,
+            })
+          ).then(() => dispatch(getTasks()));
 
-    // const updateSubTaskStatus = (value) => {
-    //     const newSubTaskData = subTasks.map((item) => {
-    //         if (value.includes(item.subTaskTitle)) {
-    //             return { ...item, status: true };
-    //         }
-    //         else {
-    //             return { ...item, status: false };
-    //         }
-    //     });
-    //     dispatch(updateSubtasksList(id, { subTasks: newSubTaskData }))
-    //         .then(() => {
-    //             dispatch(getTasks());
-    //         });
-    // };
-
-
+    }
     return (
         <Box
             width={{ base: "80%", sm: "90%", md: "90%", lg: "90%", xl: "90%" }}
@@ -85,9 +90,6 @@ const LpTaskCard = ({ id, title, description, tags, Date, colorScheme }) => {
                     direction={{ base: "column", sm: "column", md: "column", lg: "row", xl: "row" }}
                     width="fit-content"
                 >
-                    {/* {tags.length && tags.map((item, index) => {
-                        return <Badge fontWeight='bold' fontSize="12px" colorScheme={colorScheme} key={index}>{item}</Badge>
-                    })} */}
                     <Badge fontWeight='bold' fontSize="12px" colorScheme={colorScheme}>{tags}</Badge>
                 </Stack>
             </Box>
@@ -117,13 +119,92 @@ const LpTaskCard = ({ id, title, description, tags, Date, colorScheme }) => {
                     paddingTop="7%"
                     justifyContent="space-between">
                     <Box color="blue">
-                        <Link to={`/admin/list-task/${id}`}><EditIcon fontSize="100%" cursor="pointer" /></Link>
+                        <EditIcon onClick={onOpen} fontSize="100%" cursor="pointer" />
                     </Box>
                     <Box color="red">
                         <DeleteIcon fontSize="100%" onClick={() => deleteTaskHandler(id)} cursor="pointer" />
                     </Box>
                 </Flex>
             </Box>
+            <Modal isOpen={isOpen} onClose={onClose}>
+            <ModalOverlay />
+            <ModalContent>
+                <ModalHeader>Update Task</ModalHeader>
+                <ModalCloseButton />
+                <ModalBody>
+
+                    {/* title  */}
+
+                    <FormControl>
+                        <FormLabel>Title</FormLabel>
+                        <Input
+                            placeholder="Enter Title"
+                            value={taskTitle}
+                            onChange={(e)=>{ setTaskTitle(e.target.value)}}
+                        />
+                    </FormControl>
+
+                    <FormControl mt={4}>
+                        <FormLabel>Description</FormLabel>
+                            <Input
+                                placeholder="Enter description"
+                                value={taskDescription}
+                                onChange={(e)=>{ setTaskDescription(e.target.value)}}
+                                // onChange={(e) => setTaskState({ type: 'description', payload: e.target.value })}
+                            />
+                    </FormControl>
+                    <FormControl mt={4}>
+                       <FormLabel>End Date</FormLabel>
+                       <Input
+                         name="start-date"
+                         type="date"
+                         value={taskDate}
+                         onChange={(e)=>{ setTaskDate(e.target.value)}}
+                        //  onChange={(e) => setTaskState({ type: 'Date', payload: e.target.value })}
+                        />
+                    </FormControl>
+
+                    {/* Task Status  */}
+
+                    <Box mb="0.5rem">
+                        <FormLabel>Task Status</FormLabel>
+                        <Select
+                            placeholder="Select Status"
+                            value={taskStatus}
+                            onChange={(e)=>{ setTaskStatus(e.target.value)}}
+                            // onChange={(e) => setTaskState({ type: 'task_status', payload: e.target.value })}
+                        >
+                            <option value="todo">Todo</option>
+                            <option value="progress">In-Progress</option>
+                            <option value="done">Done</option>
+                        </Select>
+                    </Box>
+
+                    {/* Tags  */}
+
+                    <Box mb="0.5rem">
+                        <FormLabel>Select Tags</FormLabel>
+                        <Select
+                            placeholder="Select Tags"
+                            value={taskTags}
+                            onChange={(e)=>{ setTaskTags(e.target.value)}}
+                            // onChange={(e) => setTaskState({ type: 'tags', payload: e.target.value })}
+                        >
+                            <option value="Personal">Personal</option>
+                            <option value="Teams">Teams</option>
+                        </Select>
+                    </Box>
+
+                </ModalBody>
+
+                <ModalFooter>
+                    <Button colorScheme='blue' onClick={updateFunc}>Update Task</Button>
+                </ModalFooter>
+
+            </ModalContent>
+            </Modal>
+
+            
         </Box>
     );
 };

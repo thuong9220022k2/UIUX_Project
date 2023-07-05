@@ -10,6 +10,7 @@ import {
     Thead,
     Tr,
     useColorModeValue,
+    Badge
   } from "@chakra-ui/react";
   import React, { useMemo } from "react";
   import {
@@ -107,32 +108,17 @@ import {
                     } else if (cell.column.Header === "PRIORITY") {
                       data = (
                         <Flex align='center'>
-                          <Icon
-                            w='24px'
-                            h='24px'
-                            me='5px'
-                            color={
-                              cell.value === "Approved"
+                          <Badge color={
+                              cell.value === "High"
                                 ? "green.500"
-                                : cell.value === "Disable"
+                                : cell.value === "Low"
                                 ? "red.500"
-                                : cell.value === "Error"
+                                : cell.value === "Medium"
                                 ? "orange.500"
                                 : null
-                            }
-                            as={
-                              cell.value === "Approved"
-                                ? MdCheckCircle
-                                : cell.value === "Disable"
-                                ? MdCancel
-                                : cell.value === "Error"
-                                ? MdOutlineError
-                                : null
-                            }
-                          />
-                          <Text color={textColor} fontSize='sm' fontWeight='700'>
+                            } fontSize='sm' fontWeight='700'>
                             {cell.value}
-                          </Text>
+                          </Badge>
                         </Flex>
                       );
                     } else if (cell.column.Header === "DATE") {

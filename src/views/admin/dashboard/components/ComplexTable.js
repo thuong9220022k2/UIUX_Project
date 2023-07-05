@@ -10,6 +10,7 @@ import {
   Thead,
   Tr,
   useColorModeValue,
+  Badge,
 } from "@chakra-ui/react";
 import React, { useMemo } from "react";
 import {
@@ -65,7 +66,7 @@ export default function ColumnsTable(props) {
           fontSize='22px'
           fontWeight='700'
           lineHeight='100%'>
-          Complex Table
+          Check Priority
         </Text>
         <Menu />
       </Flex>
@@ -104,36 +105,21 @@ export default function ColumnsTable(props) {
                         {cell.value}
                       </Text>
                     );
-                  } else if (cell.column.Header === "STATUS") {
+                  } else if (cell.column.Header === "PRIORITY") {
                     data = (
                       <Flex align='center'>
-                        <Icon
-                          w='24px'
-                          h='24px'
-                          me='5px'
-                          color={
-                            cell.value === "Approved"
-                              ? "green.500"
-                              : cell.value === "Disable"
-                              ? "red.500"
-                              : cell.value === "Error"
-                              ? "orange.500"
-                              : null
-                          }
-                          as={
-                            cell.value === "Approved"
-                              ? MdCheckCircle
-                              : cell.value === "Disable"
-                              ? MdCancel
-                              : cell.value === "Error"
-                              ? MdOutlineError
-                              : null
-                          }
-                        />
-                        <Text color={textColor} fontSize='sm' fontWeight='700'>
-                          {cell.value}
-                        </Text>
-                      </Flex>
+                      <Badge color={
+                          cell.value === "High"
+                            ? "green.500"
+                            : cell.value === "Low"
+                            ? "red.500"
+                            : cell.value === "Medium"
+                            ? "orange.500"
+                            : null
+                        } fontSize='sm' fontWeight='700'>
+                        {cell.value}
+                      </Badge>
+                    </Flex>
                     );
                   } else if (cell.column.Header === "DATE") {
                     data = (

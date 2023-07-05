@@ -60,7 +60,7 @@ import {
             fontSize='22px'
             fontWeight='700'
             lineHeight='100%'>
-            Column List
+            Project Done
           </Text>
           <Menu />
         </Flex>
@@ -113,7 +113,7 @@ import {
                           </Text>
                         </Flex>
                       );
-                    } else if (cell.column.Header === "QUANTITY") {
+                    } else if (cell.column.Header === "PROJECT") {
                       data = (
                         <Text color={textColor} fontSize='sm' fontWeight='700'>
                           {cell.value}

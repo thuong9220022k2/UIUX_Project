@@ -1,5 +1,4 @@
 // Chakra imports
-import { Box, SimpleGrid } from "@chakra-ui/react";
 import DevelopmentTable from "./components/DevelopmentTable";
 import CheckTable from "./components/CheckTable";
 import ColumnsTable from "./components/ColumnsTable";
@@ -10,6 +9,10 @@ import {
   columnsDataColumns,
   columnsDataComplex,
 } from "./variables/columnsData";
+import {
+  Box,
+  SimpleGrid,
+} from "@chakra-ui/react";
 import tableDataDevelopment from "./variables/tableDataDevelopment.json";
 import tableDataCheck from "./variables/tableDataCheck.json";
 import tableDataColumns from "./variables/tableDataColumns.json";
@@ -26,7 +29,7 @@ export default function Settings() {
         spacing={{ base: "20px", xl: "20px" }}>
         <DevelopmentTable
           columnsData={columnsDataDevelopment}
-          tableData={tableDataDevelopment}
+          tableData={tableDataDevelopment}     
         />
         <CheckTable columnsData={columnsDataCheck} tableData={tableDataCheck} />
         <ColumnsTable

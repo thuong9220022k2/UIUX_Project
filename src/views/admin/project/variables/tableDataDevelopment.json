@@ -1,68 +1,44 @@
 [
     {
-      "name":"Marketplace",
+      "name":"Dự án AI",
       "member": ["apple","android","windows"], 
-      "date": "12.Jan.2021",
+      "date": "12.Jan",
       "progress": 75.5  
     },
     {
-      "name":"Venus DB PRO",
+      "name":"ITSS",
       "member": ["apple" ], 
-      "date": "21.Feb.2021",
+      "date": "21.Feb",
       "progress": 35.4  
     },
     {
-      "name":"Venus DS",
+      "name":"UI/UX",
       "member": ["apple" ,"windows"], 
-      "date": "13.Mar.2021",
+      "date": "13.Mar",
       "progress": 25  
     },
     {
-      "name":"Venus 3D Asset",
+      "name":"Thiết Kế Giao Diện",
       "member": ["apple","android","windows"], 
-      "date": "24.Jan.2021",
+      "date": "24.Jan",
       "progress": 100  
     },
     {
-      "name":"Marketplace",
+      "name":"TTUD",
       "member": ["apple", "windows"], 
-      "date": "Oct 24, 2022",
+      "date": "Oct 24",
       "progress": 75.5  
     },
     {
-      "name":"Marketplace",
+      "name":"Open ERP",
       "member": ["apple","android","windows"], 
-      "date": "Oct 24, 2022",
+      "date": "Oct 24",
       "progress": 75.5  
     },
     {
-      "name":"Marketplace",
+      "name":"Lập Trình Tổng Quát",
       "member": ["apple","android","windows"], 
-      "date": "12.Jan.2021",
-      "progress": 75.5  
-    },
-    {
-      "name":"Venus DB PRO",
-      "member": ["apple" ], 
-      "date": "21.Feb.2021",
-      "progress": 35.4  
-    },
-    {
-      "name":"Venus DS",
-      "member": ["apple" ,"windows"], 
-      "date": "13.Mar.2021",
-      "progress": 25  
-    },
-    {
-      "name":"Venus 3D Asset",
-      "member": ["apple","android","windows"], 
-      "date": "24.Jan.2021",
-      "progress": 100  
-    },
-    {
-      "name":"Marketplace",
-      "member": ["apple", "windows"], 
-      "date": "Oct 24, 2022",
+      "date": "12.Jan",
       "progress": 75.5  
     }
   ]
